@@ -1,13 +1,10 @@
 function solution(k, m, score) {
-    if(score.length < m){
-        return 0;
+    let answer = 0;
+    let idx = 0;
+    let arr = score.sort((a,b)=>b-a);
+    for(let i=0; i<parseInt(arr.length/m); i++){
+        answer += arr[idx+(m-1)];
+        idx += m;
     }
-    score.sort((a, b) => a - b);
-    let total = 0;
-    while(score.length >= m){
-        const box = score.splice(score.length - m, m);
-        const prize = m * Math.min(...box);
-        total += prize;
-    }
-    return total;
+    return answer*m;
 }
