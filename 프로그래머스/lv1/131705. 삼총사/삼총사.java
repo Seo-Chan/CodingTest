@@ -4,11 +4,9 @@ class Solution {
         for(int i=0; i<number.length; i++){
             for(int j=i+1; j<number.length; j++){
                 for(int k=j+1; k<number.length; k++){
-                    if(i!=j && j!=k && i!=k){
                         int sum = number[i] + number[j] + number[k];
                         if(sum==0){
                             answer++;
-                        }
                     }
                 }
             }
